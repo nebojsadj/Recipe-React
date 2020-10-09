@@ -1,7 +1,7 @@
 import React from "react";
 
 function Modal({ current }) {
-  const { name, image, ingredients } = current;
+  const { label, image, ingredients } = current;
 
   return (
     <div
@@ -15,7 +15,7 @@ function Modal({ current }) {
         <div className="modal-content">
           <div className="modal-header">
             <h2 className="modal-title" id="exampleModalLongTitle">
-              {name}
+              {label}
             </h2>
             <button
               type="button"

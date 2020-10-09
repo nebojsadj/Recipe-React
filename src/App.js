@@ -7,7 +7,7 @@ import Search from "./components/Search";
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [current, setCurrent] = useState({
-    name: "",
+    label: "",
     images: "",
     ingredients: [],
   });
@@ -27,12 +27,15 @@ function App() {
       .then((data) => {
         setRecipes(data.hits.map((el) => el.recipe));
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        alert("No results requested");
+        console.log(err);
+      });
   };
 
-  const displayRecipe = (name, image, ingredients) => {
+  const displayRecipe = (label, image, ingredients) => {
     setCurrent({
-      name: name,
+      label: label,
       image: image,
       ingredients: ingredients,
     });

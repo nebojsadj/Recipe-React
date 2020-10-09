@@ -1,18 +1,12 @@
 import React from "react";
 
-function Recipe({
-  name,
-  image,
-  ingredients,
-  weight,
-  digest,
-  calories,
-  displayRecipe,
-}) {
+function Recipe({ recipe, displayRecipe }) {
+  const { label, image, ingredients, weight, digest, calories } = recipe;
+
   return (
     <div className="card bg">
       <div className="card-header">
-        <h2 className=" text-center text-primary">{name}</h2>
+        <h2 className=" text-center text-primary">{label}</h2>
       </div>
       <div className="card-body">
         <div className="row">
@@ -45,7 +39,7 @@ function Recipe({
           data-toggle="modal"
           data-target="#exampleModalLong"
           onClick={() => {
-            displayRecipe(name, image, ingredients);
+            displayRecipe(label, image, ingredients);
           }}
         >
           Show recipe

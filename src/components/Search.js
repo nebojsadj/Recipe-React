@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function Search({ showRecipes }) {
   const [state, setState] = useState("");
+
   const searchRecipes = () => {
     if (state === "") {
       alert("Please enter your search text!");
