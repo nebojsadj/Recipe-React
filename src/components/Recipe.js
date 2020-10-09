@@ -1,7 +1,8 @@
 import React from "react";
 
 function Recipe({ recipe, displayRecipe }) {
-  const { label, image, ingredients, weight, digest, calories } = recipe;
+  const { label, image, ingredients, totalWeight, digest, calories } = recipe;
+  const dig = digest.slice(0, 3);
 
   return (
     <div className="card bg">
@@ -14,21 +15,19 @@ function Recipe({ recipe, displayRecipe }) {
             <img src={image} alt="" className="imgs" />
           </div>
           <div className="col-6">
-            <h4 className="mt-4 text-dark">{`Calories : ${Math.floor(
-              calories
-            )} `}</h4>
-            <h4 className="mt-4 text-dark">{`${
-              digest[0].label
-            } : ${digest[0].total.toFixed(2)} ${digest[0].unit}`}</h4>
-            <h4 className="mt-4 text-dark">{`${
-              digest[1].label
-            } : ${digest[1].total.toFixed(2)} ${digest[1].unit}`}</h4>
-            <h4 className="mt-4 text-dark">{`${
-              digest[2].label
-            } : ${digest[2].total.toFixed(2)} ${digest[2].unit}`}</h4>
-            <h4 className="mt-4 text-dark">{`Total weight : ${Math.floor(
-              weight
+            <ul className="list-group mt-5">
+              {dig.map((el, index) => (
+                <li className="digest" key={index}>{`${
+                  el.label
+                } : ${el.total.toFixed(2)} ${el.unit}`}</li>
+              ))}
+            </ul>
+            <h4 className="float-left mt-5">{`Weight : ${Math.floor(
+              totalWeight
             )} g`}</h4>
+            <h4 className="float-left">{`Calories : ${Math.floor(
+              calories
+            )} cal`}</h4>
           </div>
         </div>
       </div>

@@ -17,3 +17,8 @@ input {
 .modalImg {
     width: 380px;
 }
+
+.digest {
+    list-style: none;
+    font-size: 24px;
+}
