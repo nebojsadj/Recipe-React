@@ -41,7 +41,7 @@ function Modal({ current }) {
                 <ol className="list-group">
                   {ingredients.map((el, index) => (
                     <li className="list-group-item" key={index}>
-                      ◈ {el.text}
+                      {`◈ ${el.text}`}
                     </li>
                   ))}
                 </ol>
