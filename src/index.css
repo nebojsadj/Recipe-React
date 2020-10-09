@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(94, 33, 33);
+}
+
+.bg {
+    background-color: #ddd;
+}
+
+.imgs {
+    width: 330px;
+}
+
+input {
+    outline: unset;
+}
+
+.modalImg {
+    width: 380px;
+}
