@@ -3,14 +3,6 @@ import React, { useState } from "react";
 function Search({ showRecipes }) {
   const [state, setState] = useState("");
 
-  const searchRecipes = () => {
-    if (state === "") {
-      alert("Please enter your search text!");
-    } else {
-      showRecipes(state);
-    }
-  };
-
   return (
     <div className="container mt-4">
       <div className="row">
@@ -18,12 +10,20 @@ function Search({ showRecipes }) {
           <div className="input-group">
             <input
               onChange={(e) => setState(e.target.value)}
+              value={state}
               type="text"
               placeholder="search"
               className="form-control text-center"
             />
-            <button onClick={searchRecipes} className="btn btn-primary">
-              ➤
+            <button
+              disabled={!state}
+              onClick={() => {
+                showRecipes(state);
+                setState("");
+              }}
+              className="btn btn-primary"
+            >
+              Search ➤
             </button>
           </div>
         </div>
