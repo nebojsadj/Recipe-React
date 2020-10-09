@@ -1,6 +1,8 @@
 import React from "react";
 
-function Modal({ name, image, ingredients }) {
+function Modal({ current }) {
+  const { name, image, ingredients } = current;
+
   return (
     <div
       className="modal fade"

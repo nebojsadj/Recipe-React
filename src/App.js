@@ -26,10 +26,6 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         setRecipes(data.hits.map((el) => el.recipe));
-
-        if (data.hits.length === 0) {
-          alert("Sorry the requested result does not exist");
-        }
       })
       .catch((err) => console.log(err));
   };
@@ -47,11 +43,7 @@ function App() {
       <Header />
       <Search showRecipes={showRecipes} />
       <RecipeList recipes={recipes} displayRecipe={displayRecipe} />
-      <Modal
-        name={current.name}
-        image={current.image}
-        ingredients={current.ingredients}
-      />
+      <Modal current={current} />
     </div>
   );
 }
