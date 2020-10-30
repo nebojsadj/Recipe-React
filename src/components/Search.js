@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { fetch_recipes } from "./redux/actions";
 
-function Search({ showRecipes }) {
-  const [state, setState] = useState("");
+function Search() {
+  const [recipes, setRecipes] = useState("");
+  const dispatch = useDispatch();
 
   return (
     <div className="container mt-4">
@@ -9,17 +12,17 @@ function Search({ showRecipes }) {
         <div className="col-8 offset-2">
           <div className="input-group">
             <input
-              onChange={(e) => setState(e.target.value)}
-              value={state}
+              onChange={(e) => setRecipes(e.target.value)}
+              value={recipes}
               type="text"
               placeholder="search"
               className="form-control text-center"
             />
             <button
-              disabled={!state}
+              disabled={!recipes}
               onClick={() => {
-                showRecipes(state);
-                setState("");
+                dispatch(fetch_recipes(recipes));
+                setRecipes("");
               }}
               className="btn btn-primary"
             >

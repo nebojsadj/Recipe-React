@@ -1,8 +1,11 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { display_recipe } from "./redux/actions";
 
-function Recipe({ recipe, displayRecipe }) {
+function Recipe({ recipe }) {
   const { label, image, ingredients, totalWeight, digest, calories } = recipe;
   const dig = digest.slice(0, 3);
+  const dispatch = useDispatch();
 
   return (
     <div className="card bg">
@@ -38,7 +41,7 @@ function Recipe({ recipe, displayRecipe }) {
           data-toggle="modal"
           data-target="#exampleModalLong"
           onClick={() => {
-            displayRecipe(label, image, ingredients);
+            dispatch(display_recipe(label, image, ingredients));
           }}
         >
           Show recipe

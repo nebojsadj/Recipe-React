@@ -1,7 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-function Modal({ current }) {
-  const { label, image, ingredients } = current;
+function Modal() {
+  const displayRecipe = useSelector((state) => state.recipes.displayRecipe);
+  const { label, image, ingredients } = displayRecipe;
 
   return (
     <div
@@ -39,11 +41,12 @@ function Modal({ current }) {
             <div className="row mt-2">
               <div className="col-10 offset-1">
                 <ol className="list-group">
-                  {ingredients.map((el, index) => (
-                    <li className="list-group-item" key={index}>
-                      {`◈ ${el.text}`}
-                    </li>
-                  ))}
+                  {ingredients &&
+                    ingredients.map((el, index) => (
+                      <li className="list-group-item" key={index}>
+                        {`◈ ${el.text}`}
+                      </li>
+                    ))}
                 </ol>
               </div>
             </div>

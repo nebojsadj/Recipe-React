@@ -1,7 +1,10 @@
 import React from "react";
 import Recipe from "./Recipe";
+import { useSelector } from "react-redux";
 
-function RecipeList({ recipes, displayRecipe }) {
+function RecipeList() {
+  const recipes = useSelector((state) => state.recipes.recipes);
+
   return (
     <div className="container-fluid">
       <div className="row">
@@ -9,7 +12,7 @@ function RecipeList({ recipes, displayRecipe }) {
           <div className="row">
             {recipes.map((recipe, index) => (
               <div className="col-6 mt-4" key={index}>
-                <Recipe recipe={recipe} displayRecipe={displayRecipe} />
+                <Recipe recipe={recipe} />
               </div>
             ))}
           </div>
