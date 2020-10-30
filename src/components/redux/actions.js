@@ -14,8 +14,7 @@ export const fetch_recipes = (recipe) => {
         dispatch(recipes_success(recipes.hits.map((el) => el.recipe)));
       })
       .catch((error) => {
-        dispatch(recipes_error(error.mesage));
-        console.log(error.mesage);
+        dispatch(recipes_error(error));
       });
   };
 };
