@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetch_recipes } from "./redux/actions";
 
 function Search() {
   const [recipes, setRecipes] = useState("");
-  const error = useSelector((state) => state.recipes.error);
   const dispatch = useDispatch();
 
   return (
@@ -24,7 +23,6 @@ function Search() {
               onClick={() => {
                 dispatch(fetch_recipes(recipes));
                 setRecipes("");
-                console.log(error);
               }}
               className="btn btn-primary"
             >
