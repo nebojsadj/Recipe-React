@@ -8,36 +8,38 @@ function Recipe({ recipe }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="card bg">
+    <div
+      className="card"
+      style={{
+        width: "18rem",
+        boxShadow: "0 0 9px black",
+      }}
+    >
       <div className="card-header">
-        <h2 className=" text-center text-primary">{label}</h2>
+        <h5 className=" text-center text-primary">{label}</h5>
       </div>
       <div className="card-body">
-        <div className="row">
-          <div className="col-6">
-            <img src={image} alt="" className="imgs" />
-          </div>
-          <div className="col-6">
-            <ul className="list-group mt-5">
-              {dig.map((el, index) => (
-                <li className="digest" key={index}>{`${
-                  el.label
-                } : ${el.total.toFixed(2)} ${el.unit}`}</li>
-              ))}
-            </ul>
-            <h4 className="float-left mt-5">{`Weight : ${Math.floor(
-              totalWeight
-            )} g`}</h4>
-            <h4 className="float-left">{`Calories : ${Math.floor(
-              calories
-            )} cal`}</h4>
-          </div>
-        </div>
+        <img src={image} alt={image} className=" mx-auto d-block imgs" />
+      </div>
+      <div>
+        <ul className="list-group mt-3 mx-auto">
+          {dig.map((el, index) => (
+            <li
+              className="d-flex justify-content-center digest"
+              key={index}
+            >{`${el.label} : ${el.total.toFixed(2)} ${el.unit}`}</li>
+          ))}
+        </ul>
+        <p className="d-flex justify-content-center mt-3">{`Weight : ${Math.floor(
+          totalWeight
+        )} g`}</p>
+        <p className="d-flex justify-content-center">{`Calories : ${Math.floor(
+          calories
+        )} cal`}</p>
       </div>
       <div className="card-footer">
         <button
-          type="button"
-          className="btn btn-primary float-right "
+          className="btn btn-primary btn-sm float-right "
           data-toggle="modal"
           data-target="#exampleModalLong"
           onClick={() => {

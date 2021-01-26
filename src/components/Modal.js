@@ -16,9 +16,9 @@ function Modal() {
       <div className="modal-dialog" role="document">
         <div className="modal-content">
           <div className="modal-header">
-            <h2 className="modal-title" id="exampleModalLongTitle">
+            <h4 className="modal-title mx-auto" id="exampleModalLongTitle">
               {label}
-            </h2>
+            </h4>
             <button
               type="button"
               className="close"
@@ -34,8 +34,10 @@ function Modal() {
                 <img src={image} alt="img" className="modalImg" />
               </div>
 
-              <div className="col-10 offset-1  mt-3">
-                <h3 className="text-center">Ingredients for preparation</h3>
+              <div className="col-10 offset-1 mt-3">
+                <h3 className="text-center ingre">
+                  Ingredients for preparation
+                </h3>
               </div>
             </div>
             <div className="row mt-2">
@@ -54,7 +56,7 @@ function Modal() {
           <div className="modal-footer">
             <button
               type="button"
-              className="btn btn-warning"
+              className="btn btn-warning closeBtn"
               data-dismiss="modal"
             >
               Close

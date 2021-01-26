@@ -8,22 +8,22 @@ function RecipeList() {
   const error = useSelector((state) => state.recipes.error);
 
   return (
-    <div className="container-fluid">
+    <div className="container mt-4">
       <div className="row">
         <div className="col-10 offset-1">
-          <div className="row">
+          <div className="row d-flex justify-content-around">
             {(loading && (
-              <div className="col-4 offset-4">
-                <h1 className="text">Loading...</h1>
+              <div className="d-flex justify-content-center">
+                <h3 className="text-light">Loading...</h3>
               </div>
             )) ||
               (error && (
-                <div className="col-4 offset-4">
-                  <h1 className="text">{error}</h1>
+                <div className="d-flex justify-content-center">
+                  <h1 className="text-light">{error}</h1>
                 </div>
               )) ||
               recipes.map((recipe, index) => (
-                <div className="col-6 mt-4" key={index}>
+                <div className=" mt-4" key={index}>
                   <Recipe recipe={recipe} />
                 </div>
               ))}
