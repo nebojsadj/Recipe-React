@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { fetch_recipes } from "./redux/actions";
+import { fetch_recipes } from "../redux/actions";
 import { FaSearch } from "react-icons/fa";
 
 function Search() {

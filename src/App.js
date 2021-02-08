@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import RecipeList from "./components/RecipeList";
 import Modal from "./components/Modal";
 import Search from "./components/Search";
-import { fetch_recipes } from "./components/redux/actions";
+import { fetch_recipes } from "./redux/actions";
 
 function App() {
   const dispatch = useDispatch();

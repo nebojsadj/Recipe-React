@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { display_recipe } from "./redux/actions";
+import { display_recipe } from "../redux/actions";
 
 function Recipe({ recipe }) {
   const { label, image, ingredients, totalWeight, digest, calories } = recipe;
