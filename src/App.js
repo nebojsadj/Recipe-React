@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetch_recipes("beef"));
-  }, []);
+  }, [dispatch]);
 
   return (
     <StrictMode>
